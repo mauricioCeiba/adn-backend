@@ -4,6 +4,7 @@ import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.puerto.repositorio.RepositorioDevolucionVehiculo;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 
 public class RepositorioDevolucionVehiculoMysql implements RepositorioDevolucionVehiculo {
 
@@ -28,9 +29,12 @@ public class RepositorioDevolucionVehiculoMysql implements RepositorioDevolucion
     public  RepositorioDevolucionVehiculoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
     }
+
+
     @Override
     public Long crear(DevolucionVehiculo devolucionVehiculo) {
-        return null;
+
+        return this.customNamedParameterJdbcTemplate.crear(devolucionVehiculo,sqlCrear);
     }
 
     @Override
@@ -40,16 +44,27 @@ public class RepositorioDevolucionVehiculoMysql implements RepositorioDevolucion
 
     @Override
     public void eliminar(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
 
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
     }
 
     @Override
     public boolean existe(Long id) {
-        return false;
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
     }
 
     @Override
     public boolean existeExcluyendoId(Long id, String nombre) {
-        return false;
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+        paramSource.addValue("nombre", nombre);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteExcluyendoId,paramSource, Boolean.class);
+
     }
 }

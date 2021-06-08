@@ -12,12 +12,12 @@ import com.ceiba.usuario.servicio.ServicioCrearUsuario;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManadorCrearDevolucionVehiculo {
+public class ManejadorCrearDevolucionVehiculo {
 
     private final FabricaDevolucionVehiculo fabricaDevolucionVehiculo;
     private final ServicioCrearDevolucionVehiculo servicioCrearDevolucionVehiculo;
 
-    public ManadorCrearDevolucionVehiculo(FabricaDevolucionVehiculo fabricaDevolucionVehiculo, ServicioCrearDevolucionVehiculo servicioCrearDevolucionVehiculo) {
+    public ManejadorCrearDevolucionVehiculo(FabricaDevolucionVehiculo fabricaDevolucionVehiculo, ServicioCrearDevolucionVehiculo servicioCrearDevolucionVehiculo) {
         this.fabricaDevolucionVehiculo = fabricaDevolucionVehiculo;
         this.servicioCrearDevolucionVehiculo = servicioCrearDevolucionVehiculo;
     }

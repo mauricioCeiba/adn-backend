@@ -10,6 +10,7 @@ import java.util.Date;
 public class AlquilerVehiculo {
 
 
+    
     private Long id;
     private Vehiculo vehiculo;
     private Usuario usuario;
