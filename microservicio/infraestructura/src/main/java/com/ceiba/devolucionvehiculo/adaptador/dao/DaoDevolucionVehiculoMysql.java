@@ -4,6 +4,7 @@ import com.ceiba.devolucionvehiculo.modelo.dto.DtoDevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.puerto.dao.DaoDevolucionVehiculo;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.usuario.adaptador.dao.MapeoUsuario;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ public class DaoDevolucionVehiculoMysql implements DaoDevolucionVehiculo {
 
     @Override
     public List<DtoDevolucionVehiculo> listar() {
-        return null;
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().query(sqlListar, new MapeoDevolucionVehiculo());
     }
 }
