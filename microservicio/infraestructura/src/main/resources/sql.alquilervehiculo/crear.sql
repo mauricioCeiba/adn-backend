@@ -1,0 +1,1 @@
+insert into alquilerVehiculo (vehiculo,usuario,cantidadDiasAlquiler, valorTotalParcial, fechaAlquiler) values (:vehiculo, :usuario, :cantidadDiasAlquiler,:valorTotalParcial, :fechaAlquiler)

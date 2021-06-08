@@ -3,7 +3,7 @@ package com.ceiba.usuario.modelo.entidad;
 
 import lombok.Getter;
 
-import java.time.LocalDateTime;
+
 
 import static com.ceiba.dominio.ValidadorArgumento.validarLongitud;
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
