@@ -1,0 +1,2 @@
+select id,cantidad_dias_alquiler,valor_total_parcial,fecha_alquiler,USUARIOS_id,VEHICULOS_id
+from alquiler_vehiculos

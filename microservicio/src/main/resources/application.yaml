@@ -12,9 +12,9 @@ server:
 
 spring:
    datasource:
-      driver-class-name: 
+      driver-class-name: com.mysql.cj.jdbc.Driver
       type: com.zaxxer.hikari.HikariDataSource
-      jdbcUrl: jdbc:mysql://locahost:3306/test
+      jdbcUrl: jdbc:mysql://localhost:3306/db_alquiler
       username: root
       password: sasa
       hikari:

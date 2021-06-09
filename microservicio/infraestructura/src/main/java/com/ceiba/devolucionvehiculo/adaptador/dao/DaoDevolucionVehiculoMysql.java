@@ -5,14 +5,16 @@ import com.ceiba.devolucionvehiculo.puerto.dao.DaoDevolucionVehiculo;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.usuario.adaptador.dao.MapeoUsuario;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class DaoDevolucionVehiculoMysql implements DaoDevolucionVehiculo {
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
-    @SqlStatement(namespace="devolucionesVehiculos", value="listar")
+    @SqlStatement(namespace="devolucionvehiculo", value="listar")
     private static String sqlListar;
 
     public DaoDevolucionVehiculoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {

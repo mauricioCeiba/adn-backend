@@ -5,7 +5,9 @@ import com.ceiba.devolucionvehiculo.puerto.repositorio.RepositorioDevolucionVehi
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class RepositorioDevolucionVehiculoMysql implements RepositorioDevolucionVehiculo {
 
 

@@ -1,7 +1,6 @@
 package com.ceiba.alquilervehiculo.puerto.repositorio;
 
 import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 
 public interface RepositorioAlquilerVehiculo {
 

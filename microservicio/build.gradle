@@ -70,7 +70,7 @@ dependencies {
 
 	compile project.ext.springbootweb
 	runtimeOnly project.ext.springdevtools
-	
+
 	implementation project.ext.springbootundertow
 	implementation project.ext.flyway
 
@@ -79,6 +79,6 @@ dependencies {
 
 bootJar {
 	mainClassName = 'com.ceiba.Application'
-    baseName = ''
+    baseName = 'microservicio'
     version =  version
 }
