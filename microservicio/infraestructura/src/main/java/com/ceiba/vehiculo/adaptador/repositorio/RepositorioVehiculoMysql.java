@@ -7,6 +7,8 @@ import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import java.time.Clock;
+
 @Repository
 public class RepositorioVehiculoMysql  implements RepositorioVehiculo {
 
@@ -34,6 +36,8 @@ public class RepositorioVehiculoMysql  implements RepositorioVehiculo {
 
     @Override
     public Long crear(Vehiculo vehiculo) {
+
+
         return this.customNamedParameterJdbcTemplate.crear(vehiculo,sqlCrear);
     }
 

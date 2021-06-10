@@ -1,3 +1,3 @@
 delete 
-from vehiculo
+from vehiculos
 where id = :id

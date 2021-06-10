@@ -1,1 +1,2 @@
-insert into vehiculo (placa, precioAlquilerPorDia,tipoVehiculo) values (:placa, :precioAlquilerPorDia, :tipoVehiculo)
+insert into vehiculos (placa, precio_alquiler_dia,tipo_vehiculo)
+values (:placa, :precioAlquilerPorDia, :tipoVehiculo)

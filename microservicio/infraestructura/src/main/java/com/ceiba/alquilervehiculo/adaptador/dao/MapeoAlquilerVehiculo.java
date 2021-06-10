@@ -16,30 +16,22 @@ public class MapeoAlquilerVehiculo implements RowMapper<DtoAlquilerVehiculo>, Ma
     @Override
     public DtoAlquilerVehiculo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-        Long id = resultSet.getLong("id");
-
-        Long id_vehiculo = resultSet.getLong("VEHICULOS_ID");
-        String placaVehiculo = resultSet.getString("placa");
-        double precioAlquilerDiaVehiculo = resultSet.getDouble("precio_alquiler_dia");
-        String tipo=  resultSet.getString("tipo_vehiculo");
-        TipoVehiculo tipoVehiculo;
-        if(tipo=="CARRO"){
-            tipoVehiculo = TipoVehiculo.CARRO;
-        }else
-        {
-            tipoVehiculo = TipoVehiculo.MOTO;
-        }
-        Vehiculo vehiculo= new Vehiculo(id_vehiculo,placaVehiculo,precioAlquilerDiaVehiculo,tipoVehiculo);
-
-        Long id_usuario = resultSet.getLong("USUARIOS_ID");
-        String nombre = resultSet.getString("nombre");
-        String cedula = resultSet.getString("cedula");
-        Usuario usuario= new Usuario(id_usuario,nombre,cedula);
+        Long id = resultSet.getLong("id_alquiler");
 
         int cantidadDiasAlquiler = resultSet.getInt("cantidad_dias_alquiler");
         double valorTotalParcial = resultSet.getDouble("valor_total_parcial");
         Date fechaAlquiler = resultSet.getDate("fecha_alquiler");
 
+        Long idVehiculo = resultSet.getLong("id_vehiculo");
+        String placa = resultSet.getNString("placa");
+        double  precioAlquilerPorDia = resultSet.getDouble("precio_alquiler_dia");
+        String tipoVehiculo = resultSet.getNString("tipo_vehiculo");
+        Vehiculo vehiculo = new Vehiculo(idVehiculo,placa,precioAlquilerPorDia,tipoVehiculo);
+
+        Long idUsuario = resultSet.getLong("id_usuario");
+        String nombre = resultSet.getNString("nombre_usuario");
+        String cedula = resultSet.getNString("cedula_usuario");
+        Usuario usuario = new Usuario(idUsuario,nombre,cedula);
 
         return new DtoAlquilerVehiculo(id,vehiculo,usuario,cantidadDiasAlquiler,valorTotalParcial,fechaAlquiler);
     }

@@ -1,2 +1,2 @@
-select id,nombre,clave,fecha_creacion
-from usuario
+select id,nombre,cedula
+from usuarios

@@ -1,2 +1,2 @@
-select id,placa,precioAlquilerPorDia,tipoVehiculo
-from vehiculo
+select id,placa,precio_alquiler_dia,tipo_vehiculo
+from vehiculos

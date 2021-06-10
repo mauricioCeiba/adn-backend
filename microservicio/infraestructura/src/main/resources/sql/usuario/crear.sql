@@ -1,1 +1,1 @@
-insert into usuario (nombre, clave,fecha_creacion) values (:nombre, :clave, :fechaCreacion)
+insert into usuarios (nombre, cedula) values (:nombre, :cedula)

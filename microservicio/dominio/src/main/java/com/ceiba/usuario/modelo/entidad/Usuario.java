@@ -3,10 +3,7 @@ package com.ceiba.usuario.modelo.entidad;
 
 import lombok.Getter;
 
-
-
-import static com.ceiba.dominio.ValidadorArgumento.validarLongitud;
-import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
+import static com.ceiba.dominio.ValidadorArgumento.*;
 
 @Getter
 public class Usuario {
@@ -25,7 +22,7 @@ public class Usuario {
     public Usuario(Long id,String nombre, String cedula) {
         validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);
         validarObligatorio(cedula, SE_DEBE_INGRESAR_LA_CEDULA);
-        validarLongitud(cedula, LONGITUD_MINIMA_CEDULA, String.format(LA_CEDULA_DEBE_TENER_UNA_LONGITUD_MINIMA,LONGITUD_MINIMA_CEDULA));
+        validarLongitudMinima(cedula, LONGITUD_MINIMA_CEDULA, String.format(LA_CEDULA_DEBE_TENER_UNA_LONGITUD_MINIMA,LONGITUD_MINIMA_CEDULA));
 
 
         this.id = id;

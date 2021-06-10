@@ -7,17 +7,17 @@ import java.time.LocalDateTime;
 public class UsuarioTestDataBuilder {
 
     private Long id;
-    private String nombreUsuario;
+    private String nombre;
     private String cedula;
 
 
     public UsuarioTestDataBuilder() {
-        nombreUsuario = "1234";
-        cedula = "1234";
+        nombre = "123";
+        cedula = "123";
 
     }
 
-    public UsuarioTestDataBuilder conClave(String cedula) {
+    public UsuarioTestDataBuilder conCedula(String cedula) {
         this.cedula = cedula;
         return this;
     }
@@ -28,6 +28,6 @@ public class UsuarioTestDataBuilder {
     }
 
     public Usuario build() {
-        return new Usuario(id,nombreUsuario, cedula);
+        return new Usuario(id,nombre, cedula);
     }
 }

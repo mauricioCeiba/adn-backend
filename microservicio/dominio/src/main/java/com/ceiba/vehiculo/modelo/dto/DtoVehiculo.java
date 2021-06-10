@@ -12,5 +12,5 @@ public class DtoVehiculo {
     private Long id;
     private String placa;
     private double precioAlquilerPorDia;
-    private TipoVehiculo tipoVehiculo;
+    private String tipoVehiculo;
 }

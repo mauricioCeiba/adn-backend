@@ -17,5 +17,7 @@ spring:
       jdbcUrl: jdbc:mysql://localhost:3306/db_alquiler
       username: root
       password: sasa
+      initialization-mode: always
       hikari:
+
          poolName: pool

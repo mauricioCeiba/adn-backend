@@ -1,1 +1,1 @@
-select count(1) from vehiculo where placa = :placa
+select count(1) from vehiculos where placa = :placa

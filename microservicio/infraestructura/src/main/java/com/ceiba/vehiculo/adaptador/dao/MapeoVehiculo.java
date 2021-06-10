@@ -15,8 +15,8 @@ public class MapeoVehiculo implements RowMapper<DtoVehiculo>, MapperResult {
 
         Long id = resultSet.getLong("id");
         String placa = resultSet.getString("placa");
-        double precioAlquilerPorDia = resultSet.getDouble("precioAlquilerPorDia");
-        TipoVehiculo tipoVehiculo = (TipoVehiculo) resultSet.getObject("tipoVehiculo");
+        double precioAlquilerPorDia = resultSet.getDouble("precio_alquiler_dia");
+        String tipoVehiculo =  resultSet.getString("tipo_vehiculo");
 
         return new DtoVehiculo(id,placa,precioAlquilerPorDia,tipoVehiculo);
     }

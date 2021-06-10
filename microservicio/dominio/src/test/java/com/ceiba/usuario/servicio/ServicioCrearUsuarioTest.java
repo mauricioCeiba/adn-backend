@@ -15,15 +15,15 @@ public class ServicioCrearUsuarioTest {
     @Test
     public void validarClaveLongitudMenor4Test() {
         // arrange
-        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conClave("124");
+        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conCedula("123");
         // act - assert
-        BasePrueba.assertThrows(() -> usuarioTestDataBuilder.build(), ExcepcionLongitudValor.class, "La clave debe tener una longitud mayor o igual a 4");
+        BasePrueba.assertThrows(() -> usuarioTestDataBuilder.build(), ExcepcionLongitudValor.class, "La cedula debe tener una longitud mayor o igual a 8");
     }
 
     @Test
     public void validarUsuarioExistenciaPreviaTest() {
         // arrange
-        Usuario usuario = new UsuarioTestDataBuilder().build();
+        Usuario usuario = new UsuarioTestDataBuilder().conCedula("1234").conId(1234L).build();
         RepositorioUsuario repositorioUsuario = Mockito.mock(RepositorioUsuario.class);
         Mockito.when(repositorioUsuario.existe(Mockito.anyString())).thenReturn(true);
         ServicioCrearUsuario servicioCrearUsuario = new ServicioCrearUsuario(repositorioUsuario);

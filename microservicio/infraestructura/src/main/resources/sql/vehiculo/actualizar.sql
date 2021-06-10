@@ -1,5 +1,5 @@
-update vehiculo
+update vehiculos
 set placa = :placa,
-	precioAlquilerPorDia = :precioAlquilerPorDia,
-	tipoVehiculo = :tipoVehiculo
+	precio_alquiler_dia = :precioAlquilerPorDia,
+	tipo_vehiculo = :tipoVehiculo
 where id = :id
