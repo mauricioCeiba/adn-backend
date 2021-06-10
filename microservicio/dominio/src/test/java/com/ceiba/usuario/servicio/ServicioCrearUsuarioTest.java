@@ -23,7 +23,7 @@ public class ServicioCrearUsuarioTest {
     @Test
     public void validarUsuarioExistenciaPreviaTest() {
         // arrange
-        Usuario usuario = new UsuarioTestDataBuilder().conCedula("1234").conId(1234L).build();
+        Usuario usuario = new UsuarioTestDataBuilder().conCedula("123456789").conId(1234L).build();
         RepositorioUsuario repositorioUsuario = Mockito.mock(RepositorioUsuario.class);
         Mockito.when(repositorioUsuario.existe(Mockito.anyString())).thenReturn(true);
         ServicioCrearUsuario servicioCrearUsuario = new ServicioCrearUsuario(repositorioUsuario);
