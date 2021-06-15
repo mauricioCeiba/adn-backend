@@ -34,14 +34,14 @@ public class ComandoControladorUsuarioTest {
     @Test
     public void crear() throws Exception{
         // arrange
-        ComandoUsuario usuario = new ComandoUsuarioTestDataBuilder().conNombre("mauricio").conCedula("123456").build();
+        ComandoUsuario usuario = new ComandoUsuarioTestDataBuilder().conNombre("julio").conCedula("123456789").build();
 
         // act - assert
         mocMvc.perform(post("/usuarios")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(usuario)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 2}"));
+                .andExpect(content().json("{'valor': 3}"));
     }
 
     @Test

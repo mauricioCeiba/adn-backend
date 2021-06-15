@@ -17,27 +17,14 @@ public class MapeoDevolucionVehiculo implements RowMapper<DtoDevolucionVehiculo>
     @Override
     public DtoDevolucionVehiculo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
-        Long idDevolucion = resultSet.getLong("id_devolucion");
-        Date fechaEntrega = resultSet.getDate("fecha_entrega_devolucion");
-        int porcentajeDeDano = resultSet.getInt("porcentaje_dano_devolucion");
+        Long idDevolucion = resultSet.getLong("id");
+        Date fechaEntrega = resultSet.getDate("fecha_entrega");
+        int porcentajeDeDano = resultSet.getInt("porcentaje_de_dano");
+        double valorPorMora = resultSet.getDouble("valor_por_mora");
+        double valorPorDanos = resultSet.getDouble("valor_por_danos");
+        double valorTotalAPagar = resultSet.getDouble("valor_total_a_pagar");
+        Long ALQUILER_VEHICULOS_id = resultSet.getLong("ALQUILER_VEHICULOS_id");
 
-
-        Long idVehiculo = resultSet.getLong("id_vehiculo");
-        String placa = resultSet.getNString("placa");
-        double  precioAlquilerPorDia = resultSet.getDouble("precio_alquiler_dia");
-        String tipoVehiculo = resultSet.getNString("tipo_vehiculo");
-        Vehiculo vehiculo = new Vehiculo(idVehiculo,placa,precioAlquilerPorDia,tipoVehiculo);
-
-        Long idUsuario = resultSet.getLong("id_usuario");
-        String nombre = resultSet.getNString("nombre_usuario");
-        String cedula = resultSet.getNString("cedula_usuario");
-        Usuario usuario = new Usuario(idUsuario,nombre,cedula);
-
-        Long idAlquiler = resultSet.getLong("id_alquiler");
-        int cantidadDiasAlquiler = resultSet.getInt("cantidad_dias_alquiler");
-        Date fechaAlquiler = resultSet.getDate("fecha_alquiler");
-        AlquilerVehiculo alquilerVehiculo = new AlquilerVehiculo(idAlquiler,vehiculo,usuario,cantidadDiasAlquiler,fechaAlquiler);
-
-        return new DtoDevolucionVehiculo(idDevolucion,alquilerVehiculo,fechaEntrega,porcentajeDeDano);
+        return new DtoDevolucionVehiculo(idDevolucion, ALQUILER_VEHICULOS_id, fechaEntrega,porcentajeDeDano,valorPorMora,valorPorDanos,valorTotalAPagar);
     }
 }

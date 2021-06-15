@@ -1,9 +1,11 @@
 package com.ceiba.configuracion;
 
+import com.ceiba.alquilervehiculo.puerto.repositorio.RepositorioAlquilerVehiculo;
 import com.ceiba.devolucionvehiculo.puerto.repositorio.RepositorioDevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.servicio.ServicioActualizarDevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.servicio.ServicioCrearDevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.servicio.ServicioEliminarDevolucionVehiculo;
+import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,8 +14,8 @@ public class BeanServicioDevolucionVehiculo {
 
 
     @Bean
-    public ServicioCrearDevolucionVehiculo servicioCrearDevolucionVehiculo(RepositorioDevolucionVehiculo repositorioDevolucionVehiculo) {
-        return new ServicioCrearDevolucionVehiculo(repositorioDevolucionVehiculo);
+    public ServicioCrearDevolucionVehiculo servicioCrearDevolucionVehiculo(RepositorioDevolucionVehiculo repositorioDevolucionVehiculo, RepositorioVehiculo repositorioVehiculo, RepositorioAlquilerVehiculo repositorioAlquilerVehiculo) {
+        return new ServicioCrearDevolucionVehiculo(repositorioDevolucionVehiculo, repositorioVehiculo,repositorioAlquilerVehiculo);
     }
 
     @Bean

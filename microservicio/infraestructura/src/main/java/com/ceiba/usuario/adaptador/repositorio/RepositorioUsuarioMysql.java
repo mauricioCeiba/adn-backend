@@ -1,5 +1,6 @@
 package com.ceiba.usuario.adaptador.repositorio;
 
+import com.ceiba.alquilervehiculo.adaptador.repositorio.MapeoAlquilerVehiculoEntidad;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.usuario.modelo.entidad.Usuario;
@@ -26,6 +27,9 @@ public class RepositorioUsuarioMysql implements RepositorioUsuario {
 
     @SqlStatement(namespace="usuario", value="existeExcluyendoId") 
     private static String sqlExisteExcluyendoId;
+
+    @SqlStatement(namespace="usuario", value="finById")
+    private static String sqlFinById;
 
     public RepositorioUsuarioMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -64,5 +68,15 @@ public class RepositorioUsuarioMysql implements RepositorioUsuario {
         paramSource.addValue("nombre", nombre);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteExcluyendoId,paramSource, Boolean.class);
+    }
+
+    @Override
+    public Usuario finById(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+
+
+        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlFinById,paramSource,new MapeoUsuariosEntidad());
+
     }
 }

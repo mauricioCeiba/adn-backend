@@ -33,8 +33,10 @@ public interface RepositorioDevolucionVehiculo {
 
     /**
      * Permite validar si existe una devolucion  excluyendo un id
-     * @param nombre
+     * @param id
      * @return si existe o no
      */
-    boolean existeExcluyendoId(Long id,String nombre);
+    boolean existeExcluyendoId(Long id);
+
+    DevolucionVehiculo finById(Long id);
 }

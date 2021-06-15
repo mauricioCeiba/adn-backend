@@ -40,7 +40,7 @@ public class ComandoControladorDevolucionVehiculoTest {
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(comandoDevolucionVehiculo)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 10}"));
+                .andExpect(content().json("{'valor': 2}"));
     }
 
     @Test

@@ -1,3 +1,3 @@
 delete 
-from devolucion_vehiculo
+from devolucion_vehiculos
 where id = :id

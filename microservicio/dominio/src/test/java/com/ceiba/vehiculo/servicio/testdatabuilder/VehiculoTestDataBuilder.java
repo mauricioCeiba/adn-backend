@@ -13,7 +13,7 @@ public class VehiculoTestDataBuilder {
 
     public VehiculoTestDataBuilder() {
         placa = "icx123";
-        precioAlquilerPorDia = 12345678;
+        precioAlquilerPorDia = 10000;
         tipoVehiculo ="CARRO";
     }
 

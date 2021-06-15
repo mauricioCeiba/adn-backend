@@ -2,6 +2,7 @@ package com.ceiba.vehiculo.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
+import com.ceiba.usuario.adaptador.repositorio.MapeoUsuariosEntidad;
 import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -28,6 +29,9 @@ public class RepositorioVehiculoMysql  implements RepositorioVehiculo {
 
     @SqlStatement(namespace = "vehiculo", value = "existeExcluyendoId")
     private static String sqlExisteExcluyendoId;
+
+    @SqlStatement(namespace="vehiculo", value="finById")
+    private static String sqlFinById;
 
     public  RepositorioVehiculoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
@@ -71,6 +75,16 @@ public class RepositorioVehiculoMysql  implements RepositorioVehiculo {
         paramSource.addValue("placa", placa);
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteExcluyendoId,paramSource, Boolean.class);
+
+    }
+
+    @Override
+    public Vehiculo finById(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+
+
+        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlFinById,paramSource,new MapeoVehiculoEntidad());
 
     }
 }

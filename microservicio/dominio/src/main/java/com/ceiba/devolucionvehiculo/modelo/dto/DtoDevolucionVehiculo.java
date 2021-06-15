@@ -11,8 +11,10 @@ import java.util.Date;
 public class DtoDevolucionVehiculo {
 
     private Long id;
-    private AlquilerVehiculo alquilerVehiculo;
+    private Long ALQUILER_VEHICULOS_id;
     private Date fechaEntrega;
     private int porcentajeDeDano;
-
+    private double valorPorMora;
+    private double valorPorDanos;
+    private double valorTotalAPagar;
 }

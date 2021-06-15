@@ -32,9 +32,14 @@ public interface RepositorioAlquilerVehiculo {
 
     /**
      * Permite validar si existe un alquilerVehiculo por nombre de la persona excluyendo un id
-     * @param nombre
+     * @param id
      * @return si existe o no
      */
-    boolean existeExcluyendoId(Long id,String nombre);
+    boolean existeExcluyendoId(Long id);
+
+
+    AlquilerVehiculo finById(Long id);
+
+
 
 }

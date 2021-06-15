@@ -10,12 +10,11 @@ import org.springframework.stereotype.Component;
 public class FabricaDevolucionVehiculo {
 
     public DevolucionVehiculo crear(ComandoDevolucionVehiculo comandoDevolucionVehiculo) {
-        final DevolucionVehiculo devolucionVehiculo = new DevolucionVehiculo(
+        return new DevolucionVehiculo(
                 comandoDevolucionVehiculo.getId(),
-                comandoDevolucionVehiculo.getAlquilerVehiculo(),
+                comandoDevolucionVehiculo.getAlquilerVehiculo().getId(),
                 comandoDevolucionVehiculo.getFechaEntrega(),
                 comandoDevolucionVehiculo.getPorcentajeDeDano()
                );
-        return devolucionVehiculo;
     }
 }

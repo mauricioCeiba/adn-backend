@@ -17,7 +17,7 @@ public class ServicioCrearVehiculoTest {
     @Test
     public void validarPlacaLongitudMenor6Test() {
         // arrange
-        VehiculoTestDataBuilder vehiculoTestDataBuilder = new VehiculoTestDataBuilder().conPlaca("icx123");
+        VehiculoTestDataBuilder vehiculoTestDataBuilder = new VehiculoTestDataBuilder().conPlaca("icx12");
         // act - assert
         BasePrueba.assertThrows(() -> vehiculoTestDataBuilder.build(), ExcepcionLongitudValor.class, "La placa debe tener una longitud  igual a 6");
     }
@@ -25,7 +25,7 @@ public class ServicioCrearVehiculoTest {
     @Test
     public void validarVehiculoExistenciaPreviaTest() {
         // arrange
-        Vehiculo vehiculo = new VehiculoTestDataBuilder().conPlaca("icx123").conId(1L).build();
+        Vehiculo vehiculo = new VehiculoTestDataBuilder().conPlaca("HCX918").conId(1L).build();
         RepositorioVehiculo repositorioVehiculo = Mockito.mock(RepositorioVehiculo.class);
         Mockito.when(repositorioVehiculo.existe(Mockito.anyString())).thenReturn(true);
         ServicioCrearVehiculo servicioCrearVehiculo = new ServicioCrearVehiculo(repositorioVehiculo);

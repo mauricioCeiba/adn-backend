@@ -14,12 +14,14 @@ public class ComandoVehiculoTestDataBuilder {
 
     public ComandoVehiculoTestDataBuilder() {
         placa = "icx531";
+        this.precioAlquilerPorDia=154000;
         tipoVehiculo = "CARRO";
 
     }
 
     public ComandoVehiculoTestDataBuilder conPlaca(String placa) {
         this.placa = placa;
+
         return this;
     }
     public ComandoVehiculoTestDataBuilder conTipoVehiculo(String tipoVehiculo) {

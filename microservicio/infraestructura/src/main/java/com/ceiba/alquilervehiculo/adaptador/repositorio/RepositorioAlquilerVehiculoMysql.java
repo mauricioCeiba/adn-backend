@@ -1,11 +1,14 @@
 package com.ceiba.alquilervehiculo.adaptador.repositorio;
 
+import com.ceiba.alquilervehiculo.adaptador.dao.MapeoAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
 import com.ceiba.alquilervehiculo.puerto.repositorio.RepositorioAlquilerVehiculo;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.stereotype.Repository;
+
+import java.sql.ResultSet;
 
 @Repository
 public class RepositorioAlquilerVehiculoMysql implements RepositorioAlquilerVehiculo {
@@ -27,6 +30,9 @@ public class RepositorioAlquilerVehiculoMysql implements RepositorioAlquilerVehi
 
     @SqlStatement(namespace="alquilervehiculo", value="existeExcluyendoId")
     private static String sqlExisteExcluyendoId;
+
+    @SqlStatement(namespace="alquilervehiculo", value="finById")
+    private static String sqlFinById;
 
     public  RepositorioAlquilerVehiculoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
@@ -65,12 +71,23 @@ public class RepositorioAlquilerVehiculoMysql implements RepositorioAlquilerVehi
     }
 
     @Override
-    public boolean existeExcluyendoId(Long id, String nombre) {
+    public boolean existeExcluyendoId(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
-        paramSource.addValue("nombre", nombre);
+
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteExcluyendoId,paramSource, Boolean.class);
+
+    }
+
+    @Override
+    public AlquilerVehiculo finById(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+
+
+        return  this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlFinById,paramSource,new MapeoAlquilerVehiculoEntidad());
+
 
     }
 }

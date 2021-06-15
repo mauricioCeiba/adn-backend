@@ -12,8 +12,8 @@ public class ComandoUsuarioTestDataBuilder {
     private String cedula;
 
     public ComandoUsuarioTestDataBuilder() {
-        nombre = UUID.randomUUID().toString();
-        cedula = "1234";
+        nombre = "andres";
+        cedula = "12345678";
 
     }
 

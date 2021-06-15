@@ -22,6 +22,11 @@ public class UsuarioTestDataBuilder {
         return this;
     }
 
+    public UsuarioTestDataBuilder sinCedula() {
+        this.cedula = null;
+        return this;
+    }
+
     public UsuarioTestDataBuilder conId(Long id) {
         this.id = id;
         return this;

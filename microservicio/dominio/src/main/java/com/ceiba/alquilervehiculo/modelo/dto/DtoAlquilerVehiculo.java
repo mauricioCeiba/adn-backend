@@ -1,7 +1,5 @@
 package com.ceiba.alquilervehiculo.modelo.dto;
 
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -12,8 +10,8 @@ import java.util.Date;
 public class DtoAlquilerVehiculo {
 
     private Long id;
-    private Vehiculo vehiculo;
-    private Usuario usuario;
+    private Long VEHICULOS_id;
+    private Long USUARIOS_id;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
     private Date fechaAlquiler;

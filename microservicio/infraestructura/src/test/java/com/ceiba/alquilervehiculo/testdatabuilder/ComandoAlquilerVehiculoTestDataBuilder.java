@@ -1,12 +1,11 @@
 package com.ceiba.alquilervehiculo.testdatabuilder;
 
 import com.ceiba.alquilervehiculo.comando.ComandoAlquilerVehiculo;
-import com.ceiba.usuario.comando.ComandoUsuario;
 import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 
 import java.util.Date;
-import java.util.UUID;
+
 
 public class ComandoAlquilerVehiculoTestDataBuilder {
 
@@ -17,8 +16,17 @@ public class ComandoAlquilerVehiculoTestDataBuilder {
     private double valorTotalParcial;
     private Date fechaAlquiler;
 
+
     public ComandoAlquilerVehiculoTestDataBuilder() {
-        cantidadDiasAlquiler = 2;
+
+        this.vehiculo=new Vehiculo(3L, "HCX948", 150000, "CARRO");
+        this.usuario = new Usuario(2L,"SOPHIA", "1097729359");
+
+
+
+        this.cantidadDiasAlquiler = 2;
+        this.valorTotalParcial=300000;
+        this.fechaAlquiler=new Date();
 
 
     }

@@ -4,7 +4,7 @@ import com.ceiba.ComandoRespuesta;
 import com.ceiba.alquilervehiculo.comando.ComandoAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.comando.fabrica.FabricaAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
-import com.ceiba.alquilervehiculo.servicio.ServicioCrearAlquiler;
+import com.ceiba.alquilervehiculo.servicio.ServicioCrearAlquilerVehiculo;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
 import org.springframework.stereotype.Component;
 
@@ -12,9 +12,9 @@ import org.springframework.stereotype.Component;
 public class ManejadorCrearAlquilerVehiculo implements ManejadorComandoRespuesta<ComandoAlquilerVehiculo, ComandoRespuesta<Long>> {
 
 private final FabricaAlquilerVehiculo fabricaAlquilerVehiculo;
-private final ServicioCrearAlquiler servicioCrearAlquiler;
+private final ServicioCrearAlquilerVehiculo servicioCrearAlquiler;
 
-public ManejadorCrearAlquilerVehiculo(FabricaAlquilerVehiculo fabricaAlquilerVehiculo, ServicioCrearAlquiler servicioCrearAlquiler){
+public ManejadorCrearAlquilerVehiculo(FabricaAlquilerVehiculo fabricaAlquilerVehiculo, ServicioCrearAlquilerVehiculo servicioCrearAlquiler){
     this.fabricaAlquilerVehiculo = fabricaAlquilerVehiculo;
     this.servicioCrearAlquiler = servicioCrearAlquiler;
 }

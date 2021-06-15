@@ -19,8 +19,12 @@ public class ComandoDevolucionVehiculoTestDataBuilder {
 
     public ComandoDevolucionVehiculoTestDataBuilder() {
         porcentajeDeDano = 10;
-
-
+        valorPorMora= 1900;
+        valorPorDanos=2999;
+        valorTotalAPagar=20000;
+        fechaEntrega = new Date();
+        AlquilerVehiculo alquilerVehiculoTest= new AlquilerVehiculo(1L,3L,1L,5,new Date());
+        alquilerVehiculo = alquilerVehiculoTest;
     }
 
     public ComandoDevolucionVehiculoTestDataBuilder conPorcentajeDeDano(int porcentajeDeDano) {

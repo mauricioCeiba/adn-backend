@@ -1,5 +1,6 @@
 package com.ceiba.usuario.servicio;
 
+import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
@@ -13,11 +14,21 @@ import com.ceiba.BasePrueba;
 public class ServicioCrearUsuarioTest {
 
     @Test
-    public void validarClaveLongitudMenor4Test() {
+    public void validarCedulaLongitudMinima8Test() {
         // arrange
         UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().conCedula("123");
         // act - assert
         BasePrueba.assertThrows(() -> usuarioTestDataBuilder.build(), ExcepcionLongitudValor.class, "La cedula debe tener una longitud mayor o igual a 8");
+    }
+
+    @Test
+    public void validarIngresoCedula(){
+        // arrange
+        UsuarioTestDataBuilder usuarioTestDataBuilder = new UsuarioTestDataBuilder().sinCedula();
+
+        // act - assert
+        BasePrueba.assertThrows(() -> usuarioTestDataBuilder.build(), ExcepcionValorObligatorio.class, "Se debe ingresar la cedula");
+
     }
 
     @Test

@@ -28,6 +28,9 @@ public class RepositorioDevolucionVehiculoMysql implements RepositorioDevolucion
     @SqlStatement(namespace = "devolucionvehiculo", value = "existeExcluyendoId")
     private static String sqlExisteExcluyendoId;
 
+    @SqlStatement(namespace = "devolucionvehiculo", value = "finById")
+    private static String sqlFinById;
+
     public  RepositorioDevolucionVehiculoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate){
         this.customNamedParameterJdbcTemplate=customNamedParameterJdbcTemplate;
     }
@@ -61,12 +64,21 @@ public class RepositorioDevolucionVehiculoMysql implements RepositorioDevolucion
     }
 
     @Override
-    public boolean existeExcluyendoId(Long id, String nombre) {
+    public boolean existeExcluyendoId(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
-        paramSource.addValue("nombre", nombre);
+
 
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteExcluyendoId,paramSource, Boolean.class);
+
+    }
+
+    @Override
+    public DevolucionVehiculo finById(Long id) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("id", id);
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlFinById,paramSource, new MapeoDevolucionVehiculoEntidad());
 
     }
 }

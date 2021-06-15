@@ -1,2 +1,2 @@
-insert into devolucion_vehiculo (alquiler_vehiculo, fecha_entrega, porcentaje_de_dano, valor_por_mora, valor_por_danos, valor_total_pagar)
- values (:alquilerVehiculo, :fechaEntrega, :porcentajeDeDano, :valorPorMora, :valorTotalAPagar)
+insert into devolucion_vehiculos (ALQUILER_VEHICULOS_id, fecha_entrega, porcentaje_de_dano, valor_por_mora, valor_por_danos, valor_total_a_pagar)
+values (:ALQUILER_VEHICULOS_id, :fechaEntrega, :porcentajeDeDano, :valorPorMora, :valorPorDanos,:valorTotalAPagar)

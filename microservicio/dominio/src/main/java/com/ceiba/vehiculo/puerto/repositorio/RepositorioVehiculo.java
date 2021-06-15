@@ -37,4 +37,8 @@ public interface RepositorioVehiculo {
      * @return si existe o no
      */
     boolean existeExcluyendoId(Long id,String placa);
+
+    Vehiculo finById(Long id);
+
+
 }

@@ -8,7 +8,7 @@ import static com.ceiba.dominio.ValidadorArgumento.*;
 @Getter
 public class Vehiculo {
 
-    private static final String LA_PLACA_DEBE_TENER_UNA_LONGITUD_IGUAL_A = "La placa debe tener una longitud  igual a %s";
+    private static final String LA_PLACA_DEBE_TENER_UNA_LONGITUD_IGUAL_A = "La placa debe tener una longitud  igual a 6";
     private static final String SE_DEBE_INGRESAR_LA_CEDULA = "Se debe ingresar la cedula";
     private static final String SE_DEBE_INGRESAR_LA_PLACA_DEL_VEHICULO = "Se debe ingresar la placa del vehiculo";
 
@@ -32,5 +32,7 @@ public class Vehiculo {
     }
 
 
+public Vehiculo(){
 
+}
 }

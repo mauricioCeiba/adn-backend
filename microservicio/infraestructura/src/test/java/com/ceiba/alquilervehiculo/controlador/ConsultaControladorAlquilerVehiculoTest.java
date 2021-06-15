@@ -30,11 +30,11 @@ public class ConsultaControladorAlquilerVehiculoTest {
         // arrange
 
         // act - assert
-        mocMvc.perform(get("/usuarios")
+        mocMvc.perform(get("/alquilervehiculos")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].nombre", is("test")));
+                .andExpect(jsonPath("$[0].valorTotalParcial", is(200000.0)));
     }
 
 
