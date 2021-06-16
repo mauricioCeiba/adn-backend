@@ -14,13 +14,13 @@ public class MapeoAlquilerVehiculoEntidad implements RowMapper<AlquilerVehiculo>
     public AlquilerVehiculo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         Long id = resultSet.getLong("id");
-        Long VEHICULOS_id = resultSet.getLong("VEHICULOS_id");
-        Long USUARIOS_id = resultSet.getLong("USUARIOS_id");
+        Long vehiculosId = resultSet.getLong("VEHICULOS_id");
+        Long usuariosId = resultSet.getLong("USUARIOS_id");
         int cantidadDiasAlquiler = resultSet.getInt("cantidad_dias_alquiler");
         double valorTotalParcial = resultSet.getDouble("valor_total_parcial");
         Date fechaAlquiler = resultSet.getDate("fecha_alquiler");
 
-            return new AlquilerVehiculo(id,VEHICULOS_id,USUARIOS_id,cantidadDiasAlquiler,fechaAlquiler);
+            return new AlquilerVehiculo(id,vehiculosId,usuariosId,cantidadDiasAlquiler,fechaAlquiler);
         }
 
 

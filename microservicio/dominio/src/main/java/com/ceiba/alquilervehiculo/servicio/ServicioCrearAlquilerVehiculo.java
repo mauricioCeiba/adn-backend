@@ -63,7 +63,7 @@ public class ServicioCrearAlquilerVehiculo {
     }
 
     public Vehiculo obetenerVehiculoDeAlquiler(AlquilerVehiculo alquilerVehiculo) {
-        Vehiculo vehiculo = repositorioVehiculo.finById(alquilerVehiculo.getVEHICULOS_id());
+        Vehiculo vehiculo = repositorioVehiculo.finById(alquilerVehiculo.getVehiculosId());
 
         if (vehiculo == null) {
             throw new ExcepcionSinDatos("No existe el vehiculo a alquilar");
@@ -74,7 +74,7 @@ public class ServicioCrearAlquilerVehiculo {
     public Usuario obetenerUsuarioDeAlquiler(AlquilerVehiculo alquilerVehiculo) {
 
 
-        Usuario usuario = repositorioUsuario.finById(alquilerVehiculo.getUSUARIOS_id());
+        Usuario usuario = repositorioUsuario.finById(alquilerVehiculo.getUsuariosId());
 
         if (usuario == null) {
             throw new ExcepcionSinDatos("El usuario no esta registrado");

@@ -41,7 +41,7 @@ public class ServicioCrearDevolucionVehiculo {
 
     public double calcularMora( DevolucionVehiculo devolucionVehiculo, AlquilerVehiculo alquilerVehiculo){
 
-         Vehiculo vehiculo= repositorioVehiculo.finById(alquilerVehiculo.getVEHICULOS_id());
+         Vehiculo vehiculo= repositorioVehiculo.finById(alquilerVehiculo.getVehiculosId());
 
         Calendar calendar = Calendar.getInstance();
 

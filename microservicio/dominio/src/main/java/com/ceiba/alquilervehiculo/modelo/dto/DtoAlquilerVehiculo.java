@@ -10,8 +10,8 @@ import java.util.Date;
 public class DtoAlquilerVehiculo {
 
     private Long id;
-    private Long VEHICULOS_id;
-    private Long USUARIOS_id;
+    private Long vehiculosId;
+    private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
     private Date fechaAlquiler;
