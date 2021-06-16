@@ -1,6 +1,6 @@
 package com.ceiba.vehiculo.modelo.entidad;
 
-import com.ceiba.vehiculo.modelo.tipo.TipoVehiculo;
+
 import lombok.Getter;
 
 import static com.ceiba.dominio.ValidadorArgumento.*;

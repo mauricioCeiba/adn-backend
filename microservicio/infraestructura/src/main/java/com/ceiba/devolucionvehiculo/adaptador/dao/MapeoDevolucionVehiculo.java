@@ -1,11 +1,8 @@
 package com.ceiba.devolucionvehiculo.adaptador.dao;
 
-import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
+
 import com.ceiba.devolucionvehiculo.modelo.dto.DtoDevolucionVehiculo;
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.dto.DtoUsuario;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

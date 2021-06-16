@@ -1,12 +1,9 @@
 package com.ceiba.alquilervehiculo.adaptador.repositorio;
 
-import com.ceiba.alquilervehiculo.modelo.dto.DtoAlquilerVehiculo;
+
 import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import org.springframework.jdbc.core.RowMapper;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;

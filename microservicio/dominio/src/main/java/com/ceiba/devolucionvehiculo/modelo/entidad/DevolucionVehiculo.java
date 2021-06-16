@@ -1,12 +1,8 @@
 package com.ceiba.devolucionvehiculo.modelo.entidad;
 
-import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
+
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.Calendar;
 import java.util.Date;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;

@@ -1,7 +1,5 @@
 package com.ceiba.vehiculo.modelo.dto;
 
-
-import com.ceiba.vehiculo.modelo.tipo.TipoVehiculo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

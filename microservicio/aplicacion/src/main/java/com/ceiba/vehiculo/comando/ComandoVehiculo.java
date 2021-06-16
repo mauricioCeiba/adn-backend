@@ -1,6 +1,5 @@
 package com.ceiba.vehiculo.comando;
 
-import com.ceiba.vehiculo.modelo.tipo.TipoVehiculo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -14,7 +14,7 @@ public class BeanServicioAlquilerVehiculo {
 
     @Bean
     public ServicioCrearAlquilerVehiculo servicioCrearAlquiler(RepositorioAlquilerVehiculo repositorioAlquilerVehiculo, RepositorioVehiculo repositorioVehiculo, RepositorioUsuario repositorioUsuario){
-        return  new ServicioCrearAlquilerVehiculo(repositorioAlquilerVehiculo,repositorioVehiculo, repositorioUsuario);
+        return  new ServicioCrearAlquilerVehiculo(repositorioAlquilerVehiculo,repositorioVehiculo,repositorioUsuario);
     }
 
     @Bean

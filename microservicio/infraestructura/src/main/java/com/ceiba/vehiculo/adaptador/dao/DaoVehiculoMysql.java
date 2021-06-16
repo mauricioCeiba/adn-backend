@@ -2,7 +2,6 @@ package com.ceiba.vehiculo.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.usuario.adaptador.dao.DaoUsuarioMysql;
 import com.ceiba.vehiculo.modelo.dto.DtoVehiculo;
 import com.ceiba.vehiculo.puerto.dao.DaoVehiculo;
 import org.springframework.stereotype.Component;

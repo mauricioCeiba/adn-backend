@@ -2,7 +2,6 @@ package com.ceiba.devolucionvehiculo.comando.manejador;
 
 import com.ceiba.devolucionvehiculo.servicio.ServicioEliminarDevolucionVehiculo;
 import com.ceiba.manejador.ManejadorComando;
-import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
 import org.springframework.stereotype.Component;
 
 @Component

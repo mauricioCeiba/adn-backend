@@ -1,6 +1,6 @@
 package com.ceiba.usuario.adaptador.repositorio;
 
-import com.ceiba.alquilervehiculo.adaptador.repositorio.MapeoAlquilerVehiculoEntidad;
+
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.usuario.modelo.entidad.Usuario;

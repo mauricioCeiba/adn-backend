@@ -1,6 +1,6 @@
 package com.ceiba.vehiculo.comando.manejador;
 
-import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
+
 import com.ceiba.vehiculo.servicio.ServicioEliminarVehiculo;
 import org.springframework.stereotype.Component;
 

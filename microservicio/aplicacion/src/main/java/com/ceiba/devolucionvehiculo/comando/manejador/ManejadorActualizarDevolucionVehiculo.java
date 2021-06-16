@@ -5,7 +5,6 @@ import com.ceiba.devolucionvehiculo.comando.fabrica.FabricaDevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.servicio.ServicioActualizarDevolucionVehiculo;
 import com.ceiba.manejador.ManejadorComando;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component

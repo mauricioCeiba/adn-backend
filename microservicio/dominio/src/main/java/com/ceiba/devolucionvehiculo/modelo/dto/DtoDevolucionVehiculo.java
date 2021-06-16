@@ -1,6 +1,5 @@
 package com.ceiba.devolucionvehiculo.modelo.dto;
 
-import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

@@ -1,7 +1,6 @@
 package com.ceiba.devolucionvehiculo.puerto.repositorio;
 
 import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 
 public interface RepositorioDevolucionVehiculo {
 

@@ -6,8 +6,6 @@ import com.ceiba.alquilervehiculo.comando.ComandoAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.comando.manejador.ManejadorActualizarAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.comando.manejador.ManejadorCrearAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.comando.manejador.ManejadorEliminarAlquilerVehiculo;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.vehiculo.comando.ComandoVehiculo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,11 +8,9 @@ import com.ceiba.alquilervehiculo.servicio.ServicioCrearAlquilerVehiculo;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
-import com.ceiba.usuario.servicio.ServicioCrearUsuario;
 import com.ceiba.usuario.servicio.testdatabuilder.UsuarioTestDataBuilder;
 import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
-import com.ceiba.vehiculo.servicio.ServicioCrearVehiculo;
 import com.ceiba.vehiculo.servicio.testdatabuilder.VehiculoTestDataBuilder;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -32,17 +30,17 @@ public class ServicioCrearAlquilerVehiculoTest {
 
         RepositorioAlquilerVehiculo repositorioAlquilerVehiculo = Mockito.mock(RepositorioAlquilerVehiculo.class);
         RepositorioVehiculo repositorioVehiculo = Mockito.mock(RepositorioVehiculo.class);
-        Mockito.when(repositorioVehiculo.finById(Mockito.anyLong())).thenReturn(vehiculo);
-
         RepositorioUsuario repositorioUsuario = Mockito.mock(RepositorioUsuario.class);
-Mockito.when(repositorioUsuario.finById(Mockito.anyLong())).thenReturn(usuario);
+
+        Mockito.when(repositorioVehiculo.finById(Mockito.anyLong())).thenReturn(vehiculo);
+        Mockito.when(repositorioUsuario.finById(Mockito.anyLong())).thenReturn(usuario);
 
         ServicioCrearAlquilerVehiculo servicioCrearAlquilerVehiculo = new ServicioCrearAlquilerVehiculo(repositorioAlquilerVehiculo, repositorioVehiculo, repositorioUsuario);
 
         servicioCrearAlquilerVehiculo.ejecutar(alquilerVehiculo);
 
         Double actual = alquilerVehiculo.getValorTotalParcial();
-        Double esperado = Double.valueOf(50000);
+        Double esperado = Double.valueOf(4000);
 
         assertEquals(actual, esperado);
     }
@@ -50,10 +48,14 @@ Mockito.when(repositorioUsuario.finById(Mockito.anyLong())).thenReturn(usuario);
     @Test
     public void validarExisteAlquiler() {
 
+        RepositorioVehiculo repositorioVehiculo = Mockito.mock(RepositorioVehiculo.class);
+        RepositorioUsuario repositorioUsuario = Mockito.mock(RepositorioUsuario.class);
+
         AlquilerVehiculo alquilerVehiculo = new AlquilerVehiculoTestDataBuilder().conId(1L).build();
         RepositorioAlquilerVehiculo repositorioAlquilerVehiculo = Mockito.mock(RepositorioAlquilerVehiculo.class);
         Mockito.when(repositorioAlquilerVehiculo.existe(Mockito.anyLong())).thenReturn(true);
-        ServicioCrearAlquilerVehiculo servicioCrearAlquilerVehiculo = new ServicioCrearAlquilerVehiculo(repositorioAlquilerVehiculo);
+        ServicioCrearAlquilerVehiculo servicioCrearAlquilerVehiculo = new ServicioCrearAlquilerVehiculo(repositorioAlquilerVehiculo,repositorioVehiculo,repositorioUsuario);
+
         // act - assert
         BasePrueba.assertThrows(() -> servicioCrearAlquilerVehiculo.ejecutar(alquilerVehiculo), ExcepcionDuplicidad.class, "El alquiler ya existe en el sistema");
 

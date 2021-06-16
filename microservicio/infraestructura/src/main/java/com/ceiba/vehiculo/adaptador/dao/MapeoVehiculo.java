@@ -2,7 +2,6 @@ package com.ceiba.vehiculo.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import com.ceiba.vehiculo.modelo.dto.DtoVehiculo;
-import com.ceiba.vehiculo.modelo.tipo.TipoVehiculo;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

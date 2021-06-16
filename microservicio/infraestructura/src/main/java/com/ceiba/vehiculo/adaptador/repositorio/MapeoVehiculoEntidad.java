@@ -1,7 +1,6 @@
 package com.ceiba.vehiculo.adaptador.repositorio;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import org.springframework.jdbc.core.RowMapper;
 

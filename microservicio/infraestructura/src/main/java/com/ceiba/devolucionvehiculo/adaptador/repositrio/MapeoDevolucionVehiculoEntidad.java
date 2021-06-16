@@ -1,6 +1,6 @@
 package com.ceiba.devolucionvehiculo.adaptador.repositrio;
 
-import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
+
 import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
 import com.ceiba.infraestructura.jdbc.MapperResult;
 import org.springframework.jdbc.core.RowMapper;

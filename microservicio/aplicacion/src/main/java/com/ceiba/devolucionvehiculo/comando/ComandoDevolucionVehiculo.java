@@ -1,8 +1,6 @@
 package com.ceiba.devolucionvehiculo.comando;
 
 import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

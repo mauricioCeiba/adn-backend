@@ -4,7 +4,6 @@ import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
 import com.ceiba.alquilervehiculo.puerto.repositorio.RepositorioAlquilerVehiculo;
 import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.puerto.repositorio.RepositorioDevolucionVehiculo;
-import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
 

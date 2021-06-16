@@ -4,7 +4,6 @@ import com.ceiba.devolucionvehiculo.modelo.dto.DtoDevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.puerto.dao.DaoDevolucionVehiculo;
 import com.ceiba.infraestructura.jdbc.CustomNamedParameterJdbcTemplate;
 import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
-import com.ceiba.usuario.adaptador.dao.MapeoUsuario;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

@@ -4,10 +4,7 @@ import com.ceiba.alquilervehiculo.comando.ComandoAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.comando.fabrica.FabricaAlquilerVehiculo;
 import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
 import com.ceiba.alquilervehiculo.servicio.ServicioActualizarAlquilerVehiculo;
-import com.ceiba.usuario.comando.ComandoUsuario;
-import com.ceiba.usuario.comando.fabrica.FabricaUsuario;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.usuario.servicio.ServicioActualizarUsuario;
+
 import org.springframework.stereotype.Component;
 
 @Component

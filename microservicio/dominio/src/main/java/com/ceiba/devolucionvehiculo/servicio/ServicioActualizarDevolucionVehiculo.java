@@ -1,7 +1,5 @@
 package com.ceiba.devolucionvehiculo.servicio;
 
-import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
-import com.ceiba.alquilervehiculo.puerto.repositorio.RepositorioAlquilerVehiculo;
 import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.puerto.repositorio.RepositorioDevolucionVehiculo;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
