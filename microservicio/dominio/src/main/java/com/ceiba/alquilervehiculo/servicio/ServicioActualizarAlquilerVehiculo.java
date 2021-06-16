@@ -17,6 +17,16 @@ public class ServicioActualizarAlquilerVehiculo {
     }
 
     public void ejecutar(AlquilerVehiculo alquilerVehiculo) {
+
+        this.validarExistenciaPrevia(alquilerVehiculo);
+
         this.repositorioAlquilerVehiculo.actualizar(alquilerVehiculo);
+    }
+
+    private void validarExistenciaPrevia(AlquilerVehiculo alquilerVehiculo) {
+        boolean existe = this.repositorioAlquilerVehiculo.existe(alquilerVehiculo.getId());
+        if(existe) {
+            throw new ExcepcionDuplicidad(EL_ALQUILER_YA_EXISTE_EN_EL_SISTEMA);
+        }
     }
 }
