@@ -12,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/alquilervehiculos")
+@RequestMapping("/alquiler")
 @Api(tags = { "Controlador comando alquiler vehiculo"})
 public class ComandoContoladorAlquilerVehiculo {
     private final ManejadorCrearAlquilerVehiculo manejadorCrearAlquilerVehiculo;

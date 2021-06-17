@@ -16,8 +16,8 @@ import java.util.Date;
 public class ComandoAlquilerVehiculo {
 
     private Long id;
-    private Vehiculo vehiculo;
-    private Usuario usuario;
+    private Long vehiculosId;
+    private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
     private Date fechaAlquiler;

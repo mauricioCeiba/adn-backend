@@ -10,8 +10,8 @@ public class FabricaAlquilerVehiculo {
     public AlquilerVehiculo crear(ComandoAlquilerVehiculo comandoAlquilerVehiculo) {
         return new AlquilerVehiculo(
                 comandoAlquilerVehiculo.getId(),
-                comandoAlquilerVehiculo.getVehiculo().getId(),
-                comandoAlquilerVehiculo.getUsuario().getId(),
+                comandoAlquilerVehiculo.getVehiculosId(),
+                comandoAlquilerVehiculo.getUsuariosId(),
                 comandoAlquilerVehiculo.getCantidadDiasAlquiler(),
                 comandoAlquilerVehiculo.getFechaAlquiler()
         );

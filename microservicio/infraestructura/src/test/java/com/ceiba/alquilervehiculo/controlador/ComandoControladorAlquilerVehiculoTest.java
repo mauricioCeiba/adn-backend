@@ -36,7 +36,7 @@ public class ComandoControladorAlquilerVehiculoTest {
         ComandoAlquilerVehiculo comandoAlquilerVehiculo = new ComandoAlquilerVehiculoTestDataBuilder().conCantidadDiasAlquiler(2).build();
 
         // act - assert
-        mocMvc.perform(post("/alquilervehiculos")
+        mocMvc.perform(post("/alquiler")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(comandoAlquilerVehiculo)))
                 .andExpect(status().isOk())
@@ -50,7 +50,7 @@ public class ComandoControladorAlquilerVehiculoTest {
         ComandoAlquilerVehiculo comandoAlquilerVehiculo = new ComandoAlquilerVehiculoTestDataBuilder().build();
 
         // act - assert
-        mocMvc.perform(put("/alquilervehiculos/{id}",id)
+        mocMvc.perform(put("/alquiler/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(comandoAlquilerVehiculo)))
                 .andExpect(status().isOk());
@@ -62,7 +62,7 @@ public class ComandoControladorAlquilerVehiculoTest {
         Long id = 2L;
 
         // act - assert
-        mocMvc.perform(delete("/alquilervehiculos/{id}",id)
+        mocMvc.perform(delete("/alquiler/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

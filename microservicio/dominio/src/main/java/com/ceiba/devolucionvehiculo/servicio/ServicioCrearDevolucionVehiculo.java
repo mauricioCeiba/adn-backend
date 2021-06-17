@@ -29,7 +29,7 @@ public class ServicioCrearDevolucionVehiculo {
     }
 
 
-    public DevolucionVehiculo asignarPrecios(DevolucionVehiculo devolucionVehiculo){
+    private DevolucionVehiculo asignarPrecios(DevolucionVehiculo devolucionVehiculo){
         AlquilerVehiculo alquilerVehiculo = repositorioAlquilerVehiculo.finById(devolucionVehiculo.getALQUILER_VEHICULOS_id());
 
         devolucionVehiculo.setValorPorDanos(calcularValorPorDanos(devolucionVehiculo, alquilerVehiculo));
@@ -39,7 +39,7 @@ public class ServicioCrearDevolucionVehiculo {
         return devolucionVehiculo;
     }
 
-    public double calcularMora( DevolucionVehiculo devolucionVehiculo, AlquilerVehiculo alquilerVehiculo){
+    private double calcularMora( DevolucionVehiculo devolucionVehiculo, AlquilerVehiculo alquilerVehiculo){
 
          Vehiculo vehiculo= repositorioVehiculo.finById(alquilerVehiculo.getVehiculosId());
 
@@ -60,13 +60,13 @@ public class ServicioCrearDevolucionVehiculo {
     }
 
 
-    public double calcularValorTotalAPagar(DevolucionVehiculo devolucionVehiculo, AlquilerVehiculo alquilerVehiculo){
+    private double calcularValorTotalAPagar(DevolucionVehiculo devolucionVehiculo, AlquilerVehiculo alquilerVehiculo){
 
 
         return alquilerVehiculo.getValorTotalParcial()+devolucionVehiculo.getValorPorMora()+ devolucionVehiculo.getValorPorDanos();
     }
 
-    public double calcularValorPorDanos(DevolucionVehiculo devolucionVehiculo,AlquilerVehiculo alquilerVehiculo){
+    private double calcularValorPorDanos(DevolucionVehiculo devolucionVehiculo,AlquilerVehiculo alquilerVehiculo){
 
 
         if(devolucionVehiculo.getPorcentajeDeDano()>0 && devolucionVehiculo.getPorcentajeDeDano()<=10){

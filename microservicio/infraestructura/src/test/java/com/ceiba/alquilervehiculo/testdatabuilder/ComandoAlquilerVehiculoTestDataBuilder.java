@@ -10,8 +10,8 @@ import java.util.Date;
 public class ComandoAlquilerVehiculoTestDataBuilder {
 
     private Long id;
-    private Vehiculo  vehiculo;
-    private Usuario usuario;
+    private Long  vehiculosId;
+    private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
     private Date fechaAlquiler;
@@ -19,11 +19,11 @@ public class ComandoAlquilerVehiculoTestDataBuilder {
 
     public ComandoAlquilerVehiculoTestDataBuilder() {
 
-        this.vehiculo=new Vehiculo(3L, "HCX948", 150000, "CARRO");
-        this.usuario = new Usuario(2L,"SOPHIA", "1097729359");
 
 
 
+        this.vehiculosId = 1L;
+        this.usuariosId = 1L;
         this.cantidadDiasAlquiler = 2;
         this.valorTotalParcial=300000;
         this.fechaAlquiler=new Date();
@@ -38,6 +38,6 @@ public class ComandoAlquilerVehiculoTestDataBuilder {
 
 
     public ComandoAlquilerVehiculo build() {
-        return new ComandoAlquilerVehiculo(id,vehiculo, usuario,cantidadDiasAlquiler,valorTotalParcial,fechaAlquiler);
+        return new ComandoAlquilerVehiculo(id,vehiculosId, usuariosId,cantidadDiasAlquiler,valorTotalParcial,fechaAlquiler);
     }
 }

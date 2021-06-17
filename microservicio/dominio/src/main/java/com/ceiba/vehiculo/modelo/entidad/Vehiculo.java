@@ -32,7 +32,7 @@ public class Vehiculo {
     }
 
 
-public Vehiculo(){
+        public Vehiculo(){
 
-}
+        }
 }
