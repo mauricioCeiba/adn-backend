@@ -15,7 +15,7 @@ public class MapeoDevolucionVehiculoEntidad implements RowMapper<DevolucionVehic
     public DevolucionVehiculo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         Long id = resultSet.getLong("id");
-        Long ALQUILER_VEHICULOS_id = resultSet.getLong("ALQUILER_VEHICULOS_id");
+        Long idAlquilerVehiculos = resultSet.getLong("ALQUILER_VEHICULOS_id");
         Date fechaEntrega = resultSet.getDate("fecha_entrega");
         int porcentajeDeDano = resultSet.getInt("porcentaje_de_dano");
         double valorPorMora = resultSet.getDouble("valor_por_mora");
@@ -23,7 +23,7 @@ public class MapeoDevolucionVehiculoEntidad implements RowMapper<DevolucionVehic
         double valorTotalAPagar = resultSet.getDouble("valor_total_a_pagar");
 
 
-            return new DevolucionVehiculo(id,ALQUILER_VEHICULOS_id,fechaEntrega,porcentajeDeDano);
+            return new DevolucionVehiculo(id,idAlquilerVehiculos,fechaEntrega,porcentajeDeDano);
         }
 
 

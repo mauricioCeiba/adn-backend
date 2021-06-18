@@ -12,7 +12,7 @@ import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 public class DevolucionVehiculo {
 
     private Long id;
-    private Long ALQUILER_VEHICULOS_id;
+    private Long idAlquilerVehiculos;
     private Date fechaEntrega;
     private int porcentajeDeDano;
     private double valorPorMora;
@@ -22,8 +22,8 @@ public class DevolucionVehiculo {
     private static final String SE_DEBE_CALCULAR_EL_VALOR_A_PAGAR = "Se debe calcular el valor a pagar";
 
 
-    public DevolucionVehiculo(Long id,Long ALQUILER_VEHICULOS_id, Date fechaEntrega,int porcentajeDeDano){
-        this.ALQUILER_VEHICULOS_id = ALQUILER_VEHICULOS_id;
+    public DevolucionVehiculo(Long id,Long idAlquilerVehiculos, Date fechaEntrega,int porcentajeDeDano){
+        this.idAlquilerVehiculos = idAlquilerVehiculos;
         this.fechaEntrega = fechaEntrega;
         this.porcentajeDeDano = porcentajeDeDano;
 

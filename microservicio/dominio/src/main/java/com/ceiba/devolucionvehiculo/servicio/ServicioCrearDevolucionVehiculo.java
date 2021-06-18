@@ -30,7 +30,7 @@ public class ServicioCrearDevolucionVehiculo {
 
 
     private DevolucionVehiculo asignarPrecios(DevolucionVehiculo devolucionVehiculo){
-        AlquilerVehiculo alquilerVehiculo = repositorioAlquilerVehiculo.finById(devolucionVehiculo.getALQUILER_VEHICULOS_id());
+        AlquilerVehiculo alquilerVehiculo = repositorioAlquilerVehiculo.finById(devolucionVehiculo.getIdAlquilerVehiculos());
 
         devolucionVehiculo.setValorPorDanos(calcularValorPorDanos(devolucionVehiculo, alquilerVehiculo));
         devolucionVehiculo.setValorPorMora(calcularMora(devolucionVehiculo, alquilerVehiculo));

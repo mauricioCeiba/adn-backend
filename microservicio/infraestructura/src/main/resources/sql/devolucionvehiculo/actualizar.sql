@@ -1,5 +1,5 @@
 update devolucion_vehiculos
-set alquiler_vehiculos_id = :alquiler_vehiculos_id,
+set alquiler_vehiculos_id = :idAlquilerVehiculos,
 	fecha_entrega = :fechaEntrega,
 	porcentaje_de_dano = :porcentajeDeDano,
 	valor_por_mora = :valorPorMora,
