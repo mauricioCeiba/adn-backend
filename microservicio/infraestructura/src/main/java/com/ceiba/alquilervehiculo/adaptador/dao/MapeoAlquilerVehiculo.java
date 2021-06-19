@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class MapeoAlquilerVehiculo implements RowMapper<DtoAlquilerVehiculo>, MapperResult {
@@ -19,7 +20,7 @@ public class MapeoAlquilerVehiculo implements RowMapper<DtoAlquilerVehiculo>, Ma
         Long id = resultSet.getLong("id");
         int cantidadDiasAlquiler = resultSet.getInt("cantidad_dias_alquiler");
         double valorTotalParcial = resultSet.getDouble("valor_total_parcial");
-        Date fechaAlquiler = resultSet.getDate("fecha_alquiler");
+        LocalDate fechaAlquiler = resultSet.getDate("fecha_alquiler").toLocalDate();
         Long idUSuario = resultSet.getLong("USUARIOS_id");
         Long idVehiculo = resultSet.getLong("VEHICULOS_id");
         return new DtoAlquilerVehiculo(id,idVehiculo,idUSuario,cantidadDiasAlquiler,valorTotalParcial,fechaAlquiler);

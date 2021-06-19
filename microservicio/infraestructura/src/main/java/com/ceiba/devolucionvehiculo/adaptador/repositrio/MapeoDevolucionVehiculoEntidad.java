@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class MapeoDevolucionVehiculoEntidad implements RowMapper<DevolucionVehiculo>, MapperResult {
@@ -16,7 +17,7 @@ public class MapeoDevolucionVehiculoEntidad implements RowMapper<DevolucionVehic
 
         Long id = resultSet.getLong("id");
         Long idAlquilerVehiculos = resultSet.getLong("ALQUILER_VEHICULOS_id");
-        Date fechaEntrega = resultSet.getDate("fecha_entrega");
+        LocalDate fechaEntrega = resultSet.getDate("fecha_entrega").toLocalDate();
         int porcentajeDeDano = resultSet.getInt("porcentaje_de_dano");
         double valorPorMora = resultSet.getDouble("valor_por_mora");
         double valorPorDanos = resultSet.getDouble("valor_por_danos");

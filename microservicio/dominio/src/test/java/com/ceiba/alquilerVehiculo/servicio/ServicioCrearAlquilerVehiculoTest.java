@@ -40,7 +40,7 @@ public class ServicioCrearAlquilerVehiculoTest {
         servicioCrearAlquilerVehiculo.ejecutar(alquilerVehiculo);
 
         Double actual = alquilerVehiculo.getValorTotalParcial();
-        Double esperado = Double.valueOf(4000);
+        Double esperado = Double.valueOf(40000);
 
         assertEquals(actual, esperado);
     }

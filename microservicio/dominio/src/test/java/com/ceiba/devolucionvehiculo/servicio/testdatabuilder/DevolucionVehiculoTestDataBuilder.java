@@ -4,13 +4,14 @@ package com.ceiba.devolucionvehiculo.servicio.testdatabuilder;
 import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
 
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class DevolucionVehiculoTestDataBuilder {
 
     private Long id;
     private Long id_alquilerVehiculo;
-    private Date fechaEntrega;
+    private LocalDate fechaEntrega;
     private int porcentajeDeDano;
     private double valorPorMora;
     private double valorPorDanos;
@@ -21,8 +22,8 @@ public class DevolucionVehiculoTestDataBuilder {
 
 
         id_alquilerVehiculo=1L;
-        Date fechaAlquiler= new Date(121,5,10);
-        fechaEntrega = new Date(121,5,14);;
+        LocalDate fechaAlquiler=  LocalDate.of(2021,6,10);
+        fechaEntrega =  LocalDate.of(2021,6,14);;
         porcentajeDeDano =11;
 
     }

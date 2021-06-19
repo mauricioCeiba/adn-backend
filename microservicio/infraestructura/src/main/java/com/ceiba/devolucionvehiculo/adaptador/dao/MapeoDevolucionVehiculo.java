@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Date;
 
 public class MapeoDevolucionVehiculo implements RowMapper<DtoDevolucionVehiculo>, MapperResult {
@@ -15,13 +16,13 @@ public class MapeoDevolucionVehiculo implements RowMapper<DtoDevolucionVehiculo>
     public DtoDevolucionVehiculo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         Long idDevolucion = resultSet.getLong("id");
-        Date fechaEntrega = resultSet.getDate("fecha_entrega");
+        LocalDate fechaEntrega = resultSet.getDate("fecha_entrega").toLocalDate();
         int porcentajeDeDano = resultSet.getInt("porcentaje_de_dano");
         double valorPorMora = resultSet.getDouble("valor_por_mora");
         double valorPorDanos = resultSet.getDouble("valor_por_danos");
         double valorTotalAPagar = resultSet.getDouble("valor_total_a_pagar");
-        Long ALQUILER_VEHICULOS_id = resultSet.getLong("ALQUILER_VEHICULOS_id");
+        Long idAlquilerVehiculos = resultSet.getLong("ALQUILER_VEHICULOS_id");
 
-        return new DtoDevolucionVehiculo(idDevolucion, ALQUILER_VEHICULOS_id, fechaEntrega,porcentajeDeDano,valorPorMora,valorPorDanos,valorTotalAPagar);
+        return new DtoDevolucionVehiculo(idDevolucion, idAlquilerVehiculos, fechaEntrega,porcentajeDeDano,valorPorMora,valorPorDanos,valorTotalAPagar);
     }
 }

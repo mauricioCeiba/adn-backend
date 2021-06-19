@@ -4,6 +4,7 @@ import com.ceiba.alquilervehiculo.comando.ComandoAlquilerVehiculo;
 import com.ceiba.usuario.modelo.entidad.Usuario;
 import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -14,7 +15,7 @@ public class ComandoAlquilerVehiculoTestDataBuilder {
     private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
-    private Date fechaAlquiler;
+    private LocalDate fechaAlquiler;
 
 
     public ComandoAlquilerVehiculoTestDataBuilder() {
@@ -26,7 +27,7 @@ public class ComandoAlquilerVehiculoTestDataBuilder {
         this.usuariosId = 1L;
         this.cantidadDiasAlquiler = 2;
         this.valorTotalParcial=300000;
-        this.fechaAlquiler=new Date();
+        this.fechaAlquiler= LocalDate.now();
 
 
     }

@@ -4,7 +4,8 @@ package com.ceiba.alquilervehiculo.modelo.entidad;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Getter
 @Setter
@@ -15,12 +16,12 @@ public class AlquilerVehiculo {
     private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
-    private Date fechaAlquiler;
+    private LocalDate fechaAlquiler;
 
     public AlquilerVehiculo(){ }
 
     public AlquilerVehiculo(Long id,Long vehiculosId,Long usuariosId, int cantidadDiasAlquiler,
-                            Date fechaAlquiler){
+                            LocalDate fechaAlquiler, double valorTotalParcial){
 
 
         this.id = id;
@@ -28,6 +29,7 @@ public class AlquilerVehiculo {
         this.usuariosId = usuariosId;
         this.cantidadDiasAlquiler = cantidadDiasAlquiler;
         this.fechaAlquiler = fechaAlquiler;
+        this.valorTotalParcial=valorTotalParcial;
 
     }
 

@@ -34,7 +34,7 @@ public class ConsultaControladorAlquilerVehiculoTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
-                .andExpect(jsonPath("$[0].valorTotalParcial", is(200000.0)));
+                .andExpect(jsonPath("$[0].valorTotalParcial", is(400000.0)));
     }
 
 

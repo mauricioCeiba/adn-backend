@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -20,5 +21,5 @@ public class ComandoAlquilerVehiculo {
     private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
-    private Date fechaAlquiler;
+    private LocalDate fechaAlquiler;
 }

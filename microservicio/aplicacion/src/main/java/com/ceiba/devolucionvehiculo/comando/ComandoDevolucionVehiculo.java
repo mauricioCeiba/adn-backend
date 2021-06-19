@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -15,8 +16,8 @@ import java.util.Date;
 public class ComandoDevolucionVehiculo {
 
     private Long id;
-    private Long idAlquilerVehiculo;
-    private Date fechaEntrega;
+    private Long idAlquilerVehiculos;
+    private LocalDate fechaEntrega;
     private int porcentajeDeDano;
     private double valorPorMora;
     private double valorPorDanos;

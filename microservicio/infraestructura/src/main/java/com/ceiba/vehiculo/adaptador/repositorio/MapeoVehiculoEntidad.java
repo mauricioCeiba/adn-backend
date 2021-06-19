@@ -13,9 +13,9 @@ public class MapeoVehiculoEntidad implements RowMapper<Vehiculo>, MapperResult {
     public Vehiculo mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         Long id = resultSet.getLong("id");
-        String placa = resultSet.getNString("placa");
+        String placa = resultSet.getString("placa");
         double precioAlquilerPorDia= resultSet.getDouble("precio_alquiler_dia");
-        String tipoVehiculo = resultSet.getNString("tipo_vehiculo");
+        String tipoVehiculo = resultSet.getString("tipo_vehiculo");
 
 
             return new Vehiculo(id,placa,precioAlquilerPorDia,tipoVehiculo);

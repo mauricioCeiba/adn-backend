@@ -49,9 +49,9 @@ public class ServicioCrearDevolucionVehiculoTest {
 
         ServicioCrearDevolucionVehiculo servicioCrearDevolucionVehiculo= new ServicioCrearDevolucionVehiculo(repositorioDevolucionVehiculo,repositorioVehiculo,repositorioAlquilerVehiculo);
         servicioCrearDevolucionVehiculo.ejecutar(devolucionVehiculo);
+       Double resul=devolucionVehiculo.getValorTotalAPagar();
 
-
-        Double esperado = Double.valueOf(52500);
+        Double esperado = Double.valueOf(54000);
         assertEquals(esperado, (Double)devolucionVehiculo.getValorTotalAPagar());
 
  }

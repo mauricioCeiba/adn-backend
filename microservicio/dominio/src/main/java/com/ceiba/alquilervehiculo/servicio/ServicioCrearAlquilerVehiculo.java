@@ -54,7 +54,7 @@ public class ServicioCrearAlquilerVehiculo {
 
 
         if (alquilerVehiculo.getCantidadDiasAlquiler() > CANTIDAD_DIAS_DESCUENTO) {
-            alquilerVehiculo.setValorTotalParcial((vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler()) * (0.08));
+            alquilerVehiculo.setValorTotalParcial((vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler()) * (0.8));
         } else {
             alquilerVehiculo.setValorTotalParcial(vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler());
         }

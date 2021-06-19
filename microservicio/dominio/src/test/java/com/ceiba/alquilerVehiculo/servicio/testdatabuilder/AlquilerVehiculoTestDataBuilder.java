@@ -2,6 +2,7 @@ package com.ceiba.alquilerVehiculo.servicio.testdatabuilder;
 
 import com.ceiba.alquilervehiculo.modelo.entidad.AlquilerVehiculo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 
@@ -14,7 +15,7 @@ public class AlquilerVehiculoTestDataBuilder {
     private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
-    private Date fechaAlquiler;
+    private LocalDate fechaAlquiler;
 
     public AlquilerVehiculoTestDataBuilder( ) {
 
@@ -22,7 +23,7 @@ public class AlquilerVehiculoTestDataBuilder {
         usuariosId = 1L;
         cantidadDiasAlquiler =10;
         valorTotalParcial = 1000;
-        fechaAlquiler=new Date(121,5,3);
+        fechaAlquiler=LocalDate.of(2021,6,10);
     }
 
     public AlquilerVehiculoTestDataBuilder conIdVehiculo(Long VEHICULOS_id) {
@@ -45,6 +46,6 @@ public class AlquilerVehiculoTestDataBuilder {
     }
 
     public AlquilerVehiculo build() {
-        return new AlquilerVehiculo(id,vehiculosId, usuariosId,cantidadDiasAlquiler,fechaAlquiler);
+        return new AlquilerVehiculo(id,vehiculosId, usuariosId,cantidadDiasAlquiler,fechaAlquiler,valorTotalParcial);
     }
 }

@@ -3,6 +3,7 @@ package com.ceiba.alquilervehiculo.modelo.dto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -14,5 +15,5 @@ public class DtoAlquilerVehiculo {
     private Long usuariosId;
     private int cantidadDiasAlquiler;
     private double valorTotalParcial;
-    private Date fechaAlquiler;
+    private LocalDate fechaAlquiler;
 }

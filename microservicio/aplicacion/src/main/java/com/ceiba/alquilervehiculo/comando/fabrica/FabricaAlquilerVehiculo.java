@@ -13,7 +13,8 @@ public class FabricaAlquilerVehiculo {
                 comandoAlquilerVehiculo.getVehiculosId(),
                 comandoAlquilerVehiculo.getUsuariosId(),
                 comandoAlquilerVehiculo.getCantidadDiasAlquiler(),
-                comandoAlquilerVehiculo.getFechaAlquiler()
+                comandoAlquilerVehiculo.getFechaAlquiler(),
+                comandoAlquilerVehiculo.getValorTotalParcial()
         );
     }
 }

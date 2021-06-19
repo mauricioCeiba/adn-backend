@@ -6,7 +6,8 @@ import com.ceiba.devolucionvehiculo.modelo.entidad.DevolucionVehiculo;
 import com.ceiba.devolucionvehiculo.puerto.repositorio.RepositorioDevolucionVehiculo;
 import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
-
+import static java.time.temporal.ChronoUnit.DAYS;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -43,17 +44,17 @@ public class ServicioCrearDevolucionVehiculo {
 
          Vehiculo vehiculo= repositorioVehiculo.finById(alquilerVehiculo.getVehiculosId());
 
-        Calendar calendar = Calendar.getInstance();
 
-        Date fechaAlquiler= alquilerVehiculo.getFechaAlquiler();
-        calendar.setTime(fechaAlquiler);
-        //se le suma la cantidad de dias que alquilo el carro a la fecha de alquiler
-        calendar.add(calendar.DAY_OF_YEAR, alquilerVehiculo.getCantidadDiasAlquiler());
+
+        LocalDate fechaAlquiler= alquilerVehiculo.getFechaAlquiler();
+
+       LocalDate fechaEntrega = devolucionVehiculo.getFechaEntrega();
+       long diasDiferencia= DAYS.between(fechaAlquiler, fechaEntrega);
 
         //si la fecha de entrega es mayor que el dia que tiene que retornar el vehiculo
-        if(devolucionVehiculo.getFechaEntrega().compareTo(calendar.getTime()) > 0){
+        if(diasDiferencia > 0){
 
-            int diasMora= devolucionVehiculo.getFechaEntrega().compareTo(calendar.getTime());
+            int diasMora= (int)diasDiferencia;
             return (vehiculo.getPrecioAlquilerPorDia()*diasMora)*0.05;
         }
         return 0;
