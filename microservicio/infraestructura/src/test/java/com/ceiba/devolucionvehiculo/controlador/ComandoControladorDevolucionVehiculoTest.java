@@ -36,7 +36,7 @@ public class ComandoControladorDevolucionVehiculoTest {
         ComandoDevolucionVehiculo comandoDevolucionVehiculo = new ComandoDevolucionVehiculoTestDataBuilder().conPorcentajeDeDano(10).build();
 
         // act - assert
-        mocMvc.perform(post("/devolucionvehiculo")
+        mocMvc.perform(post("/devoluciones")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(comandoDevolucionVehiculo)))
                 .andExpect(status().isOk())
@@ -50,7 +50,7 @@ public class ComandoControladorDevolucionVehiculoTest {
         ComandoDevolucionVehiculo comandoDevolucionVehiculo = new ComandoDevolucionVehiculoTestDataBuilder().build();
 
         // act - assert
-        mocMvc.perform(put("/devolucionvehiculo/{id}",id)
+        mocMvc.perform(put("/devoluciones/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(comandoDevolucionVehiculo)))
                 .andExpect(status().isOk());
@@ -62,7 +62,7 @@ public class ComandoControladorDevolucionVehiculoTest {
         Long id = 2L;
 
         // act - assert
-        mocMvc.perform(delete("/devolucionvehiculo/{id}",id)
+        mocMvc.perform(delete("/devoluciones/{id}",id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());

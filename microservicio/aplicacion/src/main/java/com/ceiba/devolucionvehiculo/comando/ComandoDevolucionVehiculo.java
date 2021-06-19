@@ -15,7 +15,7 @@ import java.util.Date;
 public class ComandoDevolucionVehiculo {
 
     private Long id;
-    private AlquilerVehiculo alquilerVehiculo;
+    private Long idAlquilerVehiculo;
     private Date fechaEntrega;
     private int porcentajeDeDano;
     private double valorPorMora;

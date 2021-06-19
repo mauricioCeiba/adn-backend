@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/devolucionvehiculo")
+@RequestMapping("/devoluciones")
 public class ConsultaControladorDevolucionVehiculo {
 
     private final ManejadorListarDevolucionVehiculo manejadorListarDevolucionVehiculo;

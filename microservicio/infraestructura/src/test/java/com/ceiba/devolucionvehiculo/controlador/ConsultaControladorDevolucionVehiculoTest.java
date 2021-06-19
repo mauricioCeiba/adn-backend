@@ -30,7 +30,7 @@ public class ConsultaControladorDevolucionVehiculoTest {
         // arrange
 
         // act - assert
-        mocMvc.perform(get("/devolucionvehiculo")
+        mocMvc.perform(get("/devoluciones")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))

@@ -10,7 +10,7 @@ import java.util.UUID;
 public class ComandoDevolucionVehiculoTestDataBuilder {
 
     private Long id;
-    private AlquilerVehiculo alquilerVehiculo;
+    private Long idAlquilerVehiculo;
     private Date fechaEntrega;
     private int porcentajeDeDano;
     private double valorPorMora;
@@ -23,8 +23,7 @@ public class ComandoDevolucionVehiculoTestDataBuilder {
         valorPorDanos=2999;
         valorTotalAPagar=20000;
         fechaEntrega = new Date();
-        AlquilerVehiculo alquilerVehiculoTest= new AlquilerVehiculo(1L,3L,1L,5,new Date());
-        alquilerVehiculo = alquilerVehiculoTest;
+        idAlquilerVehiculo = 1L;
     }
 
     public ComandoDevolucionVehiculoTestDataBuilder conPorcentajeDeDano(int porcentajeDeDano) {
@@ -34,6 +33,6 @@ public class ComandoDevolucionVehiculoTestDataBuilder {
 
 
     public ComandoDevolucionVehiculo build() {
-        return new ComandoDevolucionVehiculo(id,alquilerVehiculo, fechaEntrega,porcentajeDeDano,valorPorMora,valorPorDanos,valorTotalAPagar);
+        return new ComandoDevolucionVehiculo(id,idAlquilerVehiculo, fechaEntrega,porcentajeDeDano,valorPorMora,valorPorDanos,valorTotalAPagar);
     }
 }

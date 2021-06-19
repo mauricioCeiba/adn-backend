@@ -12,7 +12,7 @@ public class FabricaDevolucionVehiculo {
     public DevolucionVehiculo crear(ComandoDevolucionVehiculo comandoDevolucionVehiculo) {
         return new DevolucionVehiculo(
                 comandoDevolucionVehiculo.getId(),
-                comandoDevolucionVehiculo.getAlquilerVehiculo().getId(),
+                comandoDevolucionVehiculo.getIdAlquilerVehiculo(),
                 comandoDevolucionVehiculo.getFechaEntrega(),
                 comandoDevolucionVehiculo.getPorcentajeDeDano()
                );
