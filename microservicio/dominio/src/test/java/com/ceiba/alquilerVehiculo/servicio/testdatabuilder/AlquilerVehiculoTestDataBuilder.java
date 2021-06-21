@@ -22,7 +22,7 @@ public class AlquilerVehiculoTestDataBuilder {
         vehiculosId = 1L;
         usuariosId = 1L;
         cantidadDiasAlquiler =10;
-        valorTotalParcial = 1000;
+        valorTotalParcial = 100000;
         fechaAlquiler=LocalDate.of(2021,6,10);
     }
 

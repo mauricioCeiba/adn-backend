@@ -27,6 +27,11 @@ public class VehiculoTestDataBuilder {
         return this;
     }
 
+    public VehiculoTestDataBuilder conPrecioAlquilerPorDia(double precioAlquilerPorDia) {
+        this.precioAlquilerPorDia = precioAlquilerPorDia;
+        return this;
+    }
+
     public Vehiculo build() {
         return new Vehiculo(id,placa, precioAlquilerPorDia,tipoVehiculo);
     }

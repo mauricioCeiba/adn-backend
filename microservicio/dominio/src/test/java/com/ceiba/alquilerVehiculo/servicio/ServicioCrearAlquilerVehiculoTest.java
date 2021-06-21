@@ -44,6 +44,30 @@ public class ServicioCrearAlquilerVehiculoTest {
 
         assertEquals(actual, esperado);
     }
+    @Test
+    public void validarValorTotalParcialSinDescuentoTest() {
+        // arrange
+
+        AlquilerVehiculo alquilerVehiculo = new AlquilerVehiculoTestDataBuilder().conCantidadDiasAlquiler(1).conIdVehiculo(1L).conId(3L).build();
+        Vehiculo vehiculo = new VehiculoTestDataBuilder().conId(1L).conPrecioAlquilerPorDia(100000).conPlaca("123icx").build();
+        Usuario usuario = new UsuarioTestDataBuilder().conId(1L).conCedula("987654566").build();
+
+        RepositorioAlquilerVehiculo repositorioAlquilerVehiculo = Mockito.mock(RepositorioAlquilerVehiculo.class);
+        RepositorioVehiculo repositorioVehiculo = Mockito.mock(RepositorioVehiculo.class);
+        RepositorioUsuario repositorioUsuario = Mockito.mock(RepositorioUsuario.class);
+
+        Mockito.when(repositorioVehiculo.finById(Mockito.anyLong())).thenReturn(vehiculo);
+        Mockito.when(repositorioUsuario.finById(Mockito.anyLong())).thenReturn(usuario);
+
+        ServicioCrearAlquilerVehiculo servicioCrearAlquilerVehiculo = new ServicioCrearAlquilerVehiculo(repositorioAlquilerVehiculo, repositorioVehiculo, repositorioUsuario);
+
+        servicioCrearAlquilerVehiculo.ejecutar(alquilerVehiculo);
+
+        Double actual = alquilerVehiculo.getValorTotalParcial();
+        Double esperado = Double.valueOf(100000);
+
+        assertEquals(actual, esperado);
+    }
 
     @Test
     public void validarExisteAlquiler() {

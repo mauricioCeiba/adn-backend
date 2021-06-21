@@ -18,7 +18,7 @@ public class AlquilerVehiculo {
     private double valorTotalParcial;
     private LocalDate fechaAlquiler;
 
-    public AlquilerVehiculo(){ }
+
 
     public AlquilerVehiculo(Long id,Long vehiculosId,Long usuariosId, int cantidadDiasAlquiler,
                             LocalDate fechaAlquiler, double valorTotalParcial){

@@ -56,13 +56,13 @@ public class ServicioCrearAlquilerVehiculo {
         if (alquilerVehiculo.getCantidadDiasAlquiler() > CANTIDAD_DIAS_DESCUENTO) {
             alquilerVehiculo.setValorTotalParcial((vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler()) * (0.8));
         } else {
-            alquilerVehiculo.setValorTotalParcial(vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler());
+           alquilerVehiculo.setValorTotalParcial(vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler());
         }
 
         return alquilerVehiculo.getValorTotalParcial();
     }
 
-    public Vehiculo obetenerVehiculoDeAlquiler(AlquilerVehiculo alquilerVehiculo) {
+    private Vehiculo obetenerVehiculoDeAlquiler(AlquilerVehiculo alquilerVehiculo) {
         Vehiculo vehiculo = repositorioVehiculo.finById(alquilerVehiculo.getVehiculosId());
 
         if (vehiculo == null) {
@@ -71,7 +71,7 @@ public class ServicioCrearAlquilerVehiculo {
         return vehiculo;
     }
 
-    public Usuario obetenerUsuarioDeAlquiler(AlquilerVehiculo alquilerVehiculo) {
+    private Usuario obetenerUsuarioDeAlquiler(AlquilerVehiculo alquilerVehiculo) {
 
 
         Usuario usuario = repositorioUsuario.finById(alquilerVehiculo.getUsuariosId());
