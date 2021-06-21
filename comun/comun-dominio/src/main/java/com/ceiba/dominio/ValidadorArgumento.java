@@ -39,6 +39,13 @@ public class ValidadorArgumento {
         }
     }
 
+    public static void validarPositivo(int valor, String mensaje) {
+        if (valor <= 0) {
+            throw new ExcepcionValorInvalido(mensaje);
+        }
+    }
+
+
     public static void validarIgual(Double valor, Double valorEsperado, String mensaje) {
         if (!valor.equals(valorEsperado)) {
             throw new ExcepcionValorInvalido(mensaje);

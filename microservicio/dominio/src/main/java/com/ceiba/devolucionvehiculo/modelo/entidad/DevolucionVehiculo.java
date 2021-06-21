@@ -22,9 +22,12 @@ public class DevolucionVehiculo {
     private double valorTotalAPagar;
 
     private static final String SE_DEBE_CALCULAR_EL_VALOR_A_PAGAR = "Se debe calcular el valor a pagar";
+    private static final String EL_ID_DEL_ALQUILERVEHICULO_NO_PUEDE_SER_NULL= "El id del alquiler vehiculo no pude ser nulo";
 
 
     public DevolucionVehiculo(Long id,Long idAlquilerVehiculos, LocalDate fechaEntrega,int porcentajeDeDano){
+
+      validarObligatorio(idAlquilerVehiculos, EL_ID_DEL_ALQUILERVEHICULO_NO_PUEDE_SER_NULL);
         this.idAlquilerVehiculos = idAlquilerVehiculos;
         this.fechaEntrega = fechaEntrega;
         this.porcentajeDeDano = porcentajeDeDano;
