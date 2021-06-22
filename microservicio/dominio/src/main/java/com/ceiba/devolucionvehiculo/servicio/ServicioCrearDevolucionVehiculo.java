@@ -8,8 +8,6 @@ import com.ceiba.vehiculo.modelo.entidad.Vehiculo;
 import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
 import static java.time.temporal.ChronoUnit.DAYS;
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.Date;
 
 public class ServicioCrearDevolucionVehiculo {
     private final RepositorioDevolucionVehiculo repositorioDevolucionVehiculo;

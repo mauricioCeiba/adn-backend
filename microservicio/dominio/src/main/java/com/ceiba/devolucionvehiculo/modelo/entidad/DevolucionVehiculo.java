@@ -28,6 +28,7 @@ public class DevolucionVehiculo {
     public DevolucionVehiculo(Long id,Long idAlquilerVehiculos, LocalDate fechaEntrega,int porcentajeDeDano){
 
       validarObligatorio(idAlquilerVehiculos, EL_ID_DEL_ALQUILERVEHICULO_NO_PUEDE_SER_NULL);
+
         this.idAlquilerVehiculos = idAlquilerVehiculos;
         this.fechaEntrega = fechaEntrega;
         this.porcentajeDeDano = porcentajeDeDano;
