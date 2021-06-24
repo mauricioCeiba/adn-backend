@@ -19,5 +19,6 @@ spring:
       password: sasa
       initialization-mode: always
       hikari:
-
          poolName: pool
+   #profiles:
+   #   active: docker

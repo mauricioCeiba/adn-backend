@@ -18,6 +18,7 @@ public class ServicioCrearAlquilerVehiculo {
     private final RepositorioVehiculo repositorioVehiculo;
     private final RepositorioUsuario repositorioUsuario;
     private static final int CANTIDAD_DIAS_DESCUENTO =2;
+    private static double  DESCUENTO_20_PORCIENTO=0.8;
 
 
     public ServicioCrearAlquilerVehiculo(RepositorioAlquilerVehiculo repositorioAlquilerVehiculo, RepositorioVehiculo repositorioVehiculo, RepositorioUsuario repositorioUsuario) {
@@ -54,7 +55,7 @@ public class ServicioCrearAlquilerVehiculo {
 
 
         if (alquilerVehiculo.getCantidadDiasAlquiler() > CANTIDAD_DIAS_DESCUENTO) {
-            alquilerVehiculo.setValorTotalParcial((vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler()) * (0.8));
+            alquilerVehiculo.setValorTotalParcial((vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler()) * (DESCUENTO_20_PORCIENTO));
         } else {
            alquilerVehiculo.setValorTotalParcial(vehiculo.getPrecioAlquilerPorDia() * alquilerVehiculo.getCantidadDiasAlquiler());
         }

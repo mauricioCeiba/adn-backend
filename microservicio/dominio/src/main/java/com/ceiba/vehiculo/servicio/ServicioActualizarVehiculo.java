@@ -20,7 +20,7 @@ public class ServicioActualizarVehiculo {
         this.repositorioVehiculo.actualizar(vehiculo);
     }
 
-    public void validarExistenciaPrevia(Vehiculo  vehiculo){
+    private void validarExistenciaPrevia(Vehiculo  vehiculo){
 
         boolean exist= this.repositorioVehiculo.existeExcluyendoId(vehiculo.getId(),vehiculo.getPlaca());
         if(exist){

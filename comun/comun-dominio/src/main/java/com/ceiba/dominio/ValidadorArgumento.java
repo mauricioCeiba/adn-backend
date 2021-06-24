@@ -1,5 +1,6 @@
 package com.ceiba.dominio;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
+import com.ceiba.dominio.excepcion.ExcepcionTipoVehiculo;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 
@@ -26,7 +28,14 @@ public class ValidadorArgumento {
             throw new ExcepcionLongitudValor(mensaje);
         }
     }
-    
+
+    public static void validarTipoVehiculo(String valor,String mensaje){
+        if(!(valor.equalsIgnoreCase("CARRO") || valor.equalsIgnoreCase("MOTO"))){
+            throw new ExcepcionTipoVehiculo(mensaje);
+        }
+    }
+
+
     public static <T> void validarNoVacio(List<T> lista, String mensaje) {
         if (lista.isEmpty()) {
             throw new ExcepcionValorObligatorio(mensaje);
@@ -34,13 +43,19 @@ public class ValidadorArgumento {
     }
 
     public static void validarPositivo(Double valor, String mensaje) {
-        if (valor <= 0) {
+        if (valor < 0) {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }
 
     public static void validarPositivo(int valor, String mensaje) {
         if (valor <= 0) {
+            throw new ExcepcionValorInvalido(mensaje);
+        }
+    }
+
+    public static void validarFechas(LocalDate fecha, String mensaje) {
+        if (fecha == null) {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }
@@ -78,6 +93,7 @@ public class ValidadorArgumento {
             throw new ExcepcionValorInvalido(mensaje);
         }
     }
+
 
     public static <E extends Enum<E>> E validarValido(String valor, Class<E> enumAObtener, String mensaje) {
         E enumObtenido = null;
