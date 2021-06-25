@@ -33,7 +33,7 @@ public class ServicioCrearAlquilerVehiculo {
     public Long ejecutar(AlquilerVehiculo alquilerVehiculo) {
 
         validarExistenciaPrevia(alquilerVehiculo);
-        Usuario usuario = obetenerUsuarioDeAlquiler(alquilerVehiculo);
+
         Vehiculo vehiculo = obetenerVehiculoDeAlquiler(alquilerVehiculo);
 
         this.calcularValorTotalParcial(alquilerVehiculo, vehiculo);
@@ -72,16 +72,7 @@ public class ServicioCrearAlquilerVehiculo {
         return vehiculo;
     }
 
-    private Usuario obetenerUsuarioDeAlquiler(AlquilerVehiculo alquilerVehiculo) {
 
-
-        Usuario usuario = repositorioUsuario.finById(alquilerVehiculo.getUsuariosId());
-
-        if (usuario == null) {
-            throw new ExcepcionSinDatos("El usuario no esta registrado");
-        }
-        return usuario;
-    }
 
 
 }

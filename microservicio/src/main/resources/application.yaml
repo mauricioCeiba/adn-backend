@@ -20,5 +20,5 @@ spring:
       initialization-mode: always
       hikari:
          poolName: pool
-   #profiles:
-   #   active: docker
+   profiles:
+      active: docker
